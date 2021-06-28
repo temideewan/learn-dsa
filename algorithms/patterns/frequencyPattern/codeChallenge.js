@@ -1,6 +1,5 @@
 // const { console } = require("@ungap/global-this");
 
-const { console } = require("@ungap/global-this");
 
 // function checkSumPresent(arr, num){
 
@@ -49,6 +48,7 @@ function frequencyCheckSumPresent(arr, num) {
 
   for (let key in arrayElems) {
       console.log(key);
+      // if there is a key in that object that is a result of num passed in - current key then we know that two keys in that object sum up to that number
     if (arrayElems[num - key]) {
       return true;
     }
