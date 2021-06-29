@@ -2,17 +2,19 @@ function longestSubStr(str) {
   if (str.length <= 0) return null;
   let currentMax = 0;
   let countUnique = 0;
-
-  for (let i = 0; i < str.length; i++) {
+  // first remove all the spaces and irrelevant characters
+  let cleaned = str.replace(/[^\w+]/g, '');
+  // loop over the cleaned one
+  for (let i = 0; i < cleaned.length -1; i++) {
     countUnique++;
-    if (str[i] === str[i + 1]) {
+    if (cleaned[i] === cleaned[i + 1]) {
       countUnique = 0;
     }
 
-    currentMax = Math.max(currentMax, countUnique);
+    currentMax = Math.max(currentMax, countUnique+1);
   }
 
   return currentMax;
 }
 
-console.log(longestSubStr("dayyo"));
+console.log(longestSubStr("hello there"));
