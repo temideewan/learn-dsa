@@ -5,7 +5,6 @@ function insertionSort(arr) {
     for(; j >= 0 && arr[j] > currentVal; j--) {
       console.log(arr[j+1], arr[j]);
       arr[j + 1] = arr[j];
-
     }
     arr[ j + 1 ] = currentVal;
   }
