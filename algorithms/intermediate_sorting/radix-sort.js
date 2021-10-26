@@ -1,7 +1,7 @@
-// function getDigit(num, pos = 1){
-//   let stringNum = num.toString();
-//   return parseInt(stringNum[stringNum.length - 1 - pos]) || 0;
-// }
+function getDigit(num, pos = 1){
+  let stringNum = num.toString();
+  return parseInt(stringNum[stringNum.length - 1 - pos]) || 0;
+}
 function getDigitAgain(num, pos = 1){
   return Math.floor((Math.abs(num) / Math.pow(10, pos)))  % 10;
 }
@@ -26,7 +26,7 @@ function radixSort(arr){
   for(let i = 0; i < longest; i++){
     let bucket = Array.from({length: 10}, () => []);
     for (let j = 0; j < arr.length; j++){
-      let currentBucketIndex = getDigitAgain(arr[j], i);
+      let currentBucketIndex = getDigit(arr[j], i);
       bucket[currentBucketIndex].push(arr[j]);
     }
     console.log(bucket);
