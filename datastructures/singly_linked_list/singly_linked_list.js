@@ -129,8 +129,9 @@ class SinglyLinkedList {
       return !!this.shift();
     }
     let prevNode = this.get(index - 1);
-    let removed = prev.next;
+    let removed = prevNode.next;
     prevNode.next = removed.next;
+    removed.next = null;
     this.length -= 1;
     return true;
   }
